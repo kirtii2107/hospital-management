@@ -13,13 +13,18 @@ mysql> show databases;
 
 mysql> use hospitalmanag;
 Database changed
-mysql> show tables;
-+-------------------------+
-| Tables_in_hospitalmanag |
-+-------------------------+
-| invoice                 |
-+-------------------------+
-1 row in set (0.05 sec)
+mysql> CREATE TABLE Invoice (
+    Invoice_ID INT PRIMARY KEY,
+    Patient_ID INT NOT NULL,
+    Room_Charges DECIMAL(10,2) DEFAULT 0,
+    Doctor_Fees DECIMAL(10,2) DEFAULT 0,
+    Medicine_Charges DECIMAL(10,2) DEFAULT 0,
+    Other_Charges DECIMAL(10,2) DEFAULT 0,
+    Total_Amount DECIMAL(10,2) NOT NULL,
+    Payment_Mode VARCHAR(20) NOT NULL,
+    Payment_Status VARCHAR(20) DEFAULT 'Pending',
+    FOREIGN KEY (Patient_ID) REFERENCES Patient_Admission(Patient_ID)
+
 
 mysql> describe invoice;
 +------------------+---------------+------+-----+---------+-------+
