@@ -1,0 +1,38 @@
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| hospitalmanag      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.07 sec)
+
+mysql> use hospitalmanag;
+Database changed
+mysql> show tables;
++-------------------------+
+| Tables_in_hospitalmanag |
++-------------------------+
+| invoice                 |
++-------------------------+
+1 row in set (0.05 sec)
+
+mysql> describe invoice;
++------------------+---------------+------+-----+---------+-------+
+| Field            | Type          | Null | Key | Default | Extra |
++------------------+---------------+------+-----+---------+-------+
+| Invoice_ID       | int           | NO   | PRI | NULL    |       |
+| Patient_ID       | int           | NO   |     | NULL    |       |
+| Room_Charges     | decimal(10,2) | YES  |     | 0.00    |       |
+| Doctor_Fees      | decimal(10,2) | YES  |     | 0.00    |       |
+| Medicine_Charges | decimal(10,2) | YES  |     | 0.00    |       |
+| Other_Charges    | decimal(10,2) | YES  |     | 0.00    |       |
+| Total_Amount     | decimal(10,2) | NO   |     | NULL    |       |
+| Payment_Status   | varchar(50)   | YES  |     | PENDING |       |
+| Payment_Mode     | varchar(50)   | NO   |     | NULL    |       |
++------------------+---------------+------+-----+---------+-------+
+9 rows in set (0.02 sec)
